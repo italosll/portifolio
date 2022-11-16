@@ -6,38 +6,38 @@ import { devices } from '../styles/breakingpoints';
  
 export function Photos( ):JSX.Element{
 
-    return(
+  return(
     
-        <Container
-        id="photos"
-        >
-         {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-                src="/profile-3.jpg"
+    <Container
+      id="photos"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/profile-3.jpg"
 
-                style={{borderRadius:"26px"}}
-                alt=""
-            />
+        style={{borderRadius:"26px"}}
+        alt=""
+      />
 
-                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                     <img
-                src="/profile-1.jpg"
-                style={{borderRadius:"26px"}}
-                alt=""
-            />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/profile-1.jpg"
+        style={{borderRadius:"26px"}}
+        alt=""
+      />
             
 
-         {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-                src="/profile-2.jpg"
-                style={{borderRadius:"26px"}}
-                alt=""
-            />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/profile-2.jpg"
+        style={{borderRadius:"26px"}}
+        alt=""
+      />
 
 
 
-        </Container>
-    )
+    </Container>
+  )
 }
 
 const Container = styled.div`

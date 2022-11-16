@@ -6,24 +6,24 @@ import { devices } from '../styles/breakingpoints';
  }
 export function Navbar({onOpen}:INavbarProps ):JSX.Element{
 
-    return(
+  return(
  
-        <Container>
-            <MobileNavLinks>
-                <span onClick={onOpen}>Menu</span>
-            </MobileNavLinks>
+    <Container>
+      <MobileNavLinks>
+        <span onClick={onOpen}>Menu</span>
+      </MobileNavLinks>
             
-            <NavLinks>
-                <a>Início</a>
-                <a>Sobre</a>
-                <a>Habilidades</a>
-                <a>Projetos</a>
-                <a>Formação</a>
-                <a>Contato</a>
-            </NavLinks>
-        </Container>
+      <NavLinks>
+        <a>Início</a>
+        <a>Sobre</a>
+        <a>Habilidades</a>
+        <a>Projetos</a>
+        <a>Formação</a>
+        <a>Contato</a>
+      </NavLinks>
+    </Container>
  
-    )
+  )
 }
 
 const Container = styled.div`
@@ -31,7 +31,11 @@ const Container = styled.div`
     z-index:300;
     width: 100%;
     height: 40px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.5) 0%, 
+        rgba(0, 0, 0, 0) 100%
+    );
     backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
