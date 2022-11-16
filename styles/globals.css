@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+
+html,
+body {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Sen, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+
+
+}
+#__next {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  color:#EFEFEF;
+  
+}
+ 
+
+html{
+  background: linear-gradient(180deg, rgba(26, 0, 92, 0.7) 0%, rgba(44, 0, 48, 0.7) 100%), #000000;
+}
+ 
+ 
