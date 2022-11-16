@@ -1,0 +1,12 @@
+{
+  "extends": "next/core-web-vitals",
+  
+  "rules": {
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-unexpected-multiline": "error",
+    "max-len": ["error", { "code": 80 }]
+  }
+ }
+
+ 
