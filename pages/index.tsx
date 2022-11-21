@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import Head from 'next/head';
+import { CSSProperties, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Drawer } from '../components/Drawer';
 import { Navbar } from '../components/Navbar';
@@ -9,58 +10,106 @@ import { SectionExperiences } from '../components/SectionExperiences';
 import { SectionHome } from '../components/SectionHome';
 import { SectionProjects } from '../components/SectionProjects';
 import { SectionSkills } from '../components/SectionSkills';
-
-
-
  
 export default function Home() {
 
   const [isOpen,setIsOpen] = useState(false);
+  const [hasCssBeenLoaded, setHasCssBeenLoaded] = useState(false);
+
+  useEffect(()=>{
+    setHasCssBeenLoaded(true)
+  },[])
 
   const onClose = ()=> setIsOpen(false);
   const onOpen = ()=> setIsOpen(true);
   const onToggle = ()=> setIsOpen(prevState => !prevState);
 
+  const url ="https://italosilva.dev"
+  const crawlerImageUrl = `${url}/screenshot-home-page`;
+  const title = "Portifólio - Ítalo Moreira Silva"
+  // eslint-disable-next-line max-len 
+  const description = "Meu nome é Ítalo Silva Sou desenvolvedor frontend Júnior e esse é o meu pedacinho na internet, Sinta se em casa :)"
 
 
-
-
+ 
   return (
     <>
-      <Drawer 
-        isOpen={isOpen}
-        onClose={onClose}
-      />
- 
+      <Head>
+        <title>Portifólio - Ítalo Moreira Silva</title>
+        <meta name="title" content={title}/>
+        <meta name="description" content={description}/>
 
-      <Container isOpen={isOpen}
-      >
-        <Navbar onOpen={onToggle}/>
+        {/* google seo */}
+        {/* eslint-disable-next-line max-len */}
+        <meta name="google-site-verification" content="lEpUtjRHjcy9uvsoUpl3S-4d1h1tFaTnra7zMXDKiRM" />
+         
+        {/* facebook */}
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content={url}/>
+        <meta property="og:title" content={title}/>
+        <meta property="og:description" content={description}/>
+        <meta property="og:image" content={crawlerImageUrl}/>
 
-   
-        <SectionHome/>
-        <SectionAbout/>
-        <SectionSkills/>   
-        <SectionProjects/> 
-        <SectionExperiences/>
-        <SectionEducation/>
-        <SectionContact/>
+        {/* twitter */}
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content={url}/>
+        <meta property="twitter:title" content={title}/>
+        <meta property="twitter:description" content={description}/>
+        <meta property="twitter:image" content={crawlerImageUrl}/>
+
+
+      </Head>
+      {hasCssBeenLoaded ?(
+        <>
+          <Drawer 
+            isOpen={isOpen}
+            onClose={onClose}
+          />
+          <Container isOpen={isOpen}
+          >
+            <Navbar onOpen={onOpen}/>
+            <SectionHome/>
+            <SectionAbout/>
+            <SectionSkills/>   
+            <SectionProjects/> 
+            <SectionExperiences/>
+            <SectionEducation/>
+            <SectionContact/>
+
+          </Container>  
+        </>
+      ) :(
+        <div 
+          style={{...PreventLayoutShifting }}
+        >
+                Carregando
+        </div>
+      )}
 
 
 
-      </Container>  
     </>
   )
 }
+ 
+const PreventLayoutShifting:CSSProperties = {
+  width:"100%",
+  height:"100%",
+  display:"flex",
+  // eslint-disable-next-line max-len
+  background:"linear-gradient(180deg, rgba(0, 47, 57, 0.7) 0%, rgba(0, 5, 48, 0.7) 100%), #000000",
+  alignItems:"center",
+  justifyContent:"center",
+  fontSize:"3rem",
+  position:"absolute", 
+  zIndex:"1000",
+}
+ 
 
 const Container = styled.div<{isOpen:boolean}>`
-width:100%;
-height:100%;
-  
+  width:100%;
+  height:100%;
   overflow: ${ (props)=> props.isOpen ? "hidden" : "auto"};
- 
-
- 
   margin:0;
   padding:0;
   & {
@@ -77,11 +126,7 @@ height:100%;
   &::-webkit-scrollbar-thumb {
     background-color: #ff00fb;
     border-radius: 10px;
-     
   }
-
-
-
 `
 
 
