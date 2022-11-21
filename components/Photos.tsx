@@ -13,25 +13,23 @@ export function Photos( ):JSX.Element{
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/profile-3.jpg"
-
+        src="/images/profile-side-1.jpg"
         style={{borderRadius:"26px"}}
-        alt=""
+        alt="Foto de ítalo Silva usando HeadSet e óculos"
       />
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/profile-1.jpg"
+        src="/images/profile-main.jpg"
         style={{borderRadius:"26px"}}
-        alt=""
-      />
-            
+        alt="Foto de ítalo Silva com paisagem ao fundo"
+      />    
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/profile-2.jpg"
+        src="/images/profile-side-2.jpg"
         style={{borderRadius:"26px"}}
-        alt=""
+        alt="Foto de Ítalo Silva usando máscara"
       />
 
 

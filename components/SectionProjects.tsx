@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Image from 'next/image';
 import styled from 'styled-components';
 import background from "../assets/backgrounds/background-projects.jpg";
@@ -7,38 +8,17 @@ import { BackgroundContainer } from './BackgroundContainer';
 import { Title } from './Title';
 
  
-export function SectionProjects( ):JSX.Element{
+export function SectionProjects():JSX.Element{
 
   const projects =[
     {
       srcCover:"/images/cover-coffe-delivery.png",
       title:"Coffe Delivery",
       // eslint-disable-next-line max-len
-      description:"Aplicação permite gerenciar um carrinho, adicionar produtos remover e alterar a quantidade de cada um deles individualmente. Durante o desenvolvimento dessa aplicação foi destacada a importância",
+      description:"Catálogo de cafés que permite gerenciar um carrinho, muito semelhante a um E-commerce. Aplicação responsiva com cobertura de testes próxima de 100%, construida usando ReactJS com Typescript e o conceito de Reducer.",
       github: "https://github.com/italosll/ignite-react-desafio-02",
-      figma:"https://github.com",
-      availableAt: "https://github.com",
-    },
-
-    {
-      srcCover:"/images/cover-react-geo-grapher.png",
-      title:"react-geo-grapher",
-      // eslint-disable-next-line max-len
-      description:"Aplicação permite gerenciar um carrinho, adicionar produtos remover e alterar a quantidade de cada um deles individualmente. Durante o desenvolvimento dessa aplicação foi destacada a importância",
-      github: "https://github.com/italosll/ignite-react-desafio-01",
-      figma:"https://github.com",
-      availableAt: "https://github.com",
-    },
-
-    {
-      srcCover:"/images/cover-register.png",
-      title:"Register",
-      // eslint-disable-next-line max-len
-      description:"Aplicação permite gerenciar um carrinho, adicionar produtos remover e alterar a quantidade de cada um deles individualmente. Durante o desenvolvimento dessa aplicação foi destacada a importância",
-      github: "https://github.com/italosll/register",
-      // eslint-disable-next-line max-len
-      figma:"https://www.figma.com/file/0YR2SPIzamtiY6DaMoSfeE/Teste-Frontend---Brainny-Register?node-id=0%3A1&t=tLw5nRYsol8dGsPi-0",
-      availableAt: null,
+      figma:"https://www.figma.com/file/F408H6jCxwTMAn5InQtb8r/Portif%C3%B3lio---Coffey-Delivery?t=w1bMfax6ERbtffih-1",
+      availableAt: "https://italo-coffey.netlify.app/",
     },
 
     {
@@ -47,10 +27,35 @@ export function SectionProjects( ):JSX.Element{
       // eslint-disable-next-line max-len
       description:"Aplicação permite gerenciar um carrinho, adicionar produtos remover e alterar a quantidade de cada um deles individualmente. Durante o desenvolvimento dessa aplicação foi destacada a importância",
       github: "https://github.com/italosll/ignite-react-desafio-01",
-      figma:"https://github.com",
-      availableAt: "https://github.com",
+      // eslint-disable-next-line max-len
+      figma:"https://www.figma.com/file/u5czK6iDfBkOroOfrkoQnz/Portif%C3%B3lio---Todo-list?t=w1bMfax6ERbtffih-1",
+      availableAt: "https://italo-todo.netlify.app/",
     },
  
+
+    {
+      srcCover:"/images/cover-react-geo-grapher.png",
+      title:"react-geo-grapher",
+      // eslint-disable-next-line max-len
+      description:"Aplicação é uma biblioteca publicada no NPM (Gerenciador de pacotes do Node) que permite exibir dados quantitativos por meio do formato de uma região geográfica. Desenvolvida utilizando ReactJS com Typescript, TurfJS e react-simple-maps.",
+      github: "https://github.com/italosll/react-geo-grapher",
+      figma:null,
+      npm: "https://www.npmjs.com/package/react-geo-grapher",
+      availableAt:null
+    },
+
+    {
+      srcCover:"/images/cover-register.png",
+      title:"Register",
+      // eslint-disable-next-line max-len
+      description:"Sistema de registro do pontos de um funcionário, permite login, registro de ponto e listagem de pontos registrados. Desenvolvido utilizando NEXTJS com typescript e integrando api GRAPHQL.",
+      github: "https://github.com/italosll/register",
+      // eslint-disable-next-line max-len
+      figma:"https://www.figma.com/file/0YR2SPIzamtiY6DaMoSfeE/Teste-Frontend---Brainny-Register?node-id=0%3A1&t=tLw5nRYsol8dGsPi-0",
+      availableAt: null,
+    },
+
+
   ]
 
   return(
@@ -86,6 +91,8 @@ interface ICardItem {
   github?: string|null,
   figma?:string|null,
   availableAt?: string|null,
+  npm?: string|null,
+
 }
 
 function CardItem({
@@ -95,6 +102,7 @@ function CardItem({
   github,
   figma,
   availableAt,
+  npm,
 }:ICardItem):JSX.Element{
 
   return(
@@ -106,22 +114,38 @@ function CardItem({
           <Image alt="a" src={srcCover} width="266" height="115"/>
           <p>{description}</p>
           <div>
-            <ExternalLink
-              link="https://www.freecodecamp.org/" 
-              srcCover="/icons/icon-bare-github.svg"
-              title="Github"
+            {github ?(
+              <ExternalLink
+                link={github}
+                srcCover="/icons/icon-bare-github.svg"
+                title="Github"
               
-            />
-            <ExternalLink
-              link="https://www.freecodecamp.org/" 
-              srcCover="/icons/icon-bare-figma.svg"
-              title="Figma"
-            />
-            <ExternalLink
-              link="https://www.freecodecamp.org/" 
-              srcCover="/icons/icon-bare-broswer.svg"
-              title="Broswer"
-            />
+              />
+            ) :null}
+
+            {figma ?(
+              <ExternalLink
+                link={figma}
+                srcCover="/icons/icon-bare-figma.svg"
+                title="Figma"
+              />
+            ) :null}
+
+            {availableAt ?(
+              <ExternalLink
+                link={availableAt}
+                srcCover="/icons/icon-bare-broswer.svg"
+                title="Broswer"
+              />
+            ) :null}
+
+            {npm ?(
+              <ExternalLink
+                link={npm}
+                srcCover="/icons/icon-bare-npm.svg"
+                title="NPM"
+              />
+            ) :null}
           </div>
         </div>
 
@@ -178,48 +202,7 @@ function ExternalLink({
 
 function GithubCard():JSX.Element{
 
-  const GithubCardContainer = styled.div`
-    width: 100%;
-    background: #1F1F1F;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-
-    
-
-    & p{
-      width: 100%;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      color:#EFEFEF
-    }
-    
-    
-    & a{
-      width: 100%;
-      height: 36px;
-      background:#000;
-      border-radius: 5px;
-      display: flex;
-      gap: 5px;
-      justify-content: center;
-      align-items: center;
-    }
  
-    @media ${devices.laptop} {
-      flex-direction: row;
- 
-      & a{
-        padding:10px;
-        width: fit-content;
-      }
-
-      & p{
-        margin-bottom: 0px;
-      }
-    }
-    `
 
   return(
     <GithubCardContainer>
@@ -306,7 +289,6 @@ const ResponsiveFlex = styled.div`
       align-items: center;
     }
 
-
     & h2 + img { // mobile image
       display: flex;
     }
@@ -324,13 +306,10 @@ const ResponsiveFlex = styled.div`
 
     & p + div{
       width: 100%;
-     
       display: flex;
       flex-direction: row;
       column-gap: 8px;
     }
-
-
 
   @media ${devices.laptop} {
 
@@ -351,11 +330,8 @@ const ResponsiveFlex = styled.div`
     & div + img{ // desktop
       display: flex;
  
-
     }
-  }
-
-    
+  } 
 `;
 
 const ProjectsConainer = styled.div`
@@ -384,19 +360,54 @@ const ProjectsConainer = styled.div`
 const ExternalLinkContainer = styled.a`
   display: flex;
   flex-direction: row;
-   
   background: #00000070;
   padding: 10px;
   gap:10px;
   border-radius: 5px;
 
 
-  & a{
-
-  }
- 
-
 `;
  
 
- 
+const GithubCardContainer = styled.div`
+width: 100%;
+background: #1F1F1F;
+border-radius: 8px;
+padding: 10px;
+display: flex;
+flex-direction: column;
+
+
+
+& p{
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color:#EFEFEF
+}
+
+
+& a{
+  width: 100%;
+  height: 36px;
+  background:#000;
+  border-radius: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media ${devices.laptop} {
+  flex-direction: row;
+
+  & a{
+    padding:10px;
+    width: fit-content;
+  }
+
+  & p{
+    margin-bottom: 0px;
+  }
+}
+`

@@ -26,7 +26,7 @@ export function SectionEducation( ):JSX.Element{
       institution:"Brainny Smart Solutions · Full-time",
       period:"2017-2022",
       // eslint-disable-next-line max-len
-      description:"Mesmo sendo um curso generalista, Ciência da computação aborda pontos fundamentais do desenvolvimento de aplicações. Durante o curso eu tive a oportunidade de aprender sobre algoritmos, banco de dados, padrões de projetos, orientação a objetos, estrutura de dados, análise de complexidade e diversos outros temas. Sempre participei de atividades de extensão como congressos e viagens. Fui ativo nas atividades de pesquisa publicando artigos e escrevendo meu trabalho de conclusão de curso, que foi publicado em uma revista internacinal com novo qualis A3.",
+      description:"Mesmo sendo um curso generalista, Ciência da computação aborda pontos fundamentais do desenvolvimento de aplicações. Durante o curso eu tive a oportunidade de aprender sobre algoritmos, banco de dados, padrões de projetos, orientação a objetos, estrutura de dados, análise de complexidade e diversos outros temas. Sempre participei de atividades de extensão como congressos e viagens. Nas atividades de pesquisa publiquei e apresentei artigos, escrevi meu trabalho de conclusão de curso, que foi publicado em uma revista internacinal com novo qualis A3.",
  
     },
  
@@ -35,7 +35,7 @@ export function SectionEducation( ):JSX.Element{
 
   return(
     <BackgroundContainer backgroundImage={background}>
-      <ContentSection id="experiences-section">
+      <ContentSection id="education-section">
 
         <Title>
             Educação

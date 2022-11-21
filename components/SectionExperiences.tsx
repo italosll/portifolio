@@ -16,7 +16,7 @@ export function SectionExperiences( ):JSX.Element{
       company:"AYT1.DEV · Full-time",
       period:"Abr 2022 - Out 2022 · 6 meses",
       // eslint-disable-next-line max-len
-      description:"Como engenhiro de software júnior atuei no desenvolvimento de aplicações web como uma loja white label, uma agência de viagens online, e um sistema ERP multitenancy para gerenciamento de empresas. Nesses projetos atuei corrigindo bugs, efertuando refatorações e implementando novas funcionalidades.",
+      description:"Como engenheiro de software júnior atuei no desenvolvimento de aplicações web como uma loja white label, uma agência de viagens online, e um sistema ERP multitenancy para gerenciamento de empresas. Nesses projetos atuei corrigindo bugs, efertuando refatorações e implementando novas funcionalidades.",
       link: "https://ayt1.dev/",
     },
 

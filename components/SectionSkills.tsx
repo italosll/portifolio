@@ -13,52 +13,66 @@ export function SectionSkills( ):JSX.Element{
     {
       srcIcon:"/icons/icon-react.svg",
       title:"Criação de sites reativos",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Ícone do ReactJS"
     },
     {
       srcIcon:"/icons/icon-next.svg",
       title:"SSG / Default SSR / SEO",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Ícone do NextJS"
+
     },
     {
       srcIcon:"/icons/icon-ui-librarys.svg",
       title:"Implementação de UI com libs",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      // eslint-disable-next-line max-len
+      altIcon:"Grupo de ícones de bibliotecas de estilização (Tailwind, ChackraUI e MaterialUI)"
+
     },
     {
       srcIcon:"/icons/icon-jest.svg",
       title:"Automação de testes no frontend",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Ícone do Jest"
     },
     {
       srcIcon:"/icons/icon-apis.svg",
       title:"Consumo de APIs Rest e Graphql",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Ícone do NodeJS e do Graphql"
     },
     {
       srcIcon:"/icons/icon-ts-html-css.svg",
       title:"Domínio de linguagens web",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Grupo de ícones (CSS, Typescript e HTML)"
     },
     {
       srcIcon:"/icons/icon-figma.svg",
       title:"Criação de designs com figma",
-      isCurrentlyStuding:false
+      isCurrentlyStuding:false,
+      altIcon:"Ícone do Figma"
+
     },
     {
       srcIcon:"/icons/icon-sql-server.svg",
       title:"SQL server",
-      isCurrentlyStuding:true
+      isCurrentlyStuding:true,
+      altIcon:"Ícone do Sql Server"
     },
     {
       srcIcon:"/icons/icon-dot-net.svg",
       title:"Frameworks .NET",
-      isCurrentlyStuding:true
+      isCurrentlyStuding:true,
+      altIcon:"Ícone do DOTNET"
     },
     {
       srcIcon:"/icons/icon-c-sharp.svg",
       title:"Linguagem c#",
-      isCurrentlyStuding:true
+      isCurrentlyStuding:true,
+      altIcon:"Ícode do C Sharp"
     }
   ]
 
@@ -90,18 +104,26 @@ export function SectionSkills( ):JSX.Element{
 interface ICardItem {
   srcIcon: string;
   title: string;
+  altIcon: string;
   isCurrentlyStuding?: boolean;
 }
 
 export function CardItem({
   srcIcon,
   title,
+  altIcon,
   isCurrentlyStuding=false
 }:ICardItem):JSX.Element{
 
   return(
     <Card>
-      <Image alt="a" src={srcIcon} width="30" height="30"/>
+      <Image 
+        title={altIcon} 
+        alt={altIcon} 
+        src={srcIcon} 
+        width="30" 
+        height="30"
+      />
       <a>{title}</a>
       {isCurrentlyStuding?(
         <span>Atualmente <br/> estudando</span>
