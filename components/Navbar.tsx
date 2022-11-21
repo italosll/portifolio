@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { devices } from '../styles/breakingpoints';
 
@@ -14,12 +15,38 @@ export function Navbar({onOpen}:INavbarProps ):JSX.Element{
       </MobileNavLinks>
             
       <NavLinks>
-        <a>Início</a>
-        <a>Sobre</a>
-        <a>Habilidades</a>
-        <a>Projetos</a>
-        <a>Formação</a>
-        <a>Contato</a>
+         
+         
+        <Link href="#home-section">
+                Início
+        </Link>
+     
+        <Link href="#about-section">
+                Sobre
+        </Link>
+       
+        <Link href="#skills-section">
+                Habilidades
+        </Link>
+       
+        <Link href="#projects-section">
+                Projetos
+        </Link>
+     
+        <Link href="#experiences-section">
+                Experiência
+        </Link>
+         
+        <Link href="#education-section">
+                Educação
+        </Link>
+       
+        <Link href="#contact-section">
+                Contato
+        </Link>
+      
+   
+ 
       </NavLinks>
     </Container>
  

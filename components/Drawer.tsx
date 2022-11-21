@@ -27,28 +27,28 @@ export function Drawer({isOpen,onClose}:IDrawerParams){
             </Link>
           </li>
           <li>
-            <Link href="#home-section" onClick={onClose}>
+            <Link href="#skills-section" onClick={onClose}>
                 Habilidades
             </Link>
           </li>
           <li>
-            <Link href="#home-section" onClick={onClose}>
+            <Link href="#projects-section" onClick={onClose}>
                 Projetos
             </Link>
           </li>
           <li>
-            <Link href="#home-section" onClick={onClose}>
+            <Link href="#experiences-section" onClick={onClose}>
                 Experiência
             </Link>
           </li>
           <li>
-            <Link href="#home-section" onClick={onClose}>
+            <Link href="#education-section" onClick={onClose}>
                 Educação
             </Link>
           </li>
           <li>
-            <Link href="#home-section" onClick={onClose}>
-                PRECIS ALTERAR o link
+            <Link href="#contact-section" onClick={onClose}>
+                Contato
             </Link>
           </li>
         </ul>
