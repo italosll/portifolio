@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { CSSProperties, useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import { Drawer } from '../components/Drawer';
 import { Navbar } from '../components/Navbar';
@@ -10,7 +11,7 @@ import { SectionExperiences } from '../components/SectionExperiences';
 import { SectionHome } from '../components/SectionHome';
 import { SectionProjects } from '../components/SectionProjects';
 import { SectionSkills } from '../components/SectionSkills';
- 
+
 export default function Home() {
 
   const [isOpen,setIsOpen] = useState(false);
@@ -29,7 +30,11 @@ export default function Home() {
   const title = "Portifólio - Ítalo Moreira Silva"
   // eslint-disable-next-line max-len 
   const description = "Meu nome é Ítalo Silva Sou desenvolvedor frontend Júnior e esse é o meu pedacinho na internet, Sinta se em casa :)"
-
+   
+  useEffect(()=>{
+    ReactGA.initialize('G-K1QXS1Y7XK');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  },[])
 
  
   return (
@@ -37,6 +42,8 @@ export default function Home() {
       <Head>
         <title>Portifólio - Ítalo Moreira Silva</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Ítalo Moreira Silva"/>
+        <meta name="keywords" content="desenvolvedor, frontend, fullstack"/>
         <meta name="title" content={title}/>
         <meta name="description" content={description}/>
 
@@ -60,6 +67,7 @@ export default function Home() {
 
 
       </Head>
+ 
       {hasCssBeenLoaded ?(
         <>
           <Drawer 
