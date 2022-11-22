@@ -46,6 +46,10 @@ export default function Home() {
         <meta name="keywords" content="desenvolvedor, frontend, fullstack"/>
         <meta name="title" content={title}/>
         <meta name="description" content={description}/>
+        <meta http-equiv="content-language" content="pt-br" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="robots" content="all"/>
+        <meta name="rating" content="general" />
 
         {/* google seo */}
         {/* eslint-disable-next-line max-len */}
