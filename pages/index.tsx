@@ -36,6 +36,7 @@ export default function Home() {
     <>
       <Head>
         <title>Portifólio - Ítalo Moreira Silva</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="title" content={title}/>
         <meta name="description" content={description}/>
 
