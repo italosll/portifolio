@@ -109,11 +109,6 @@ const DrawerArea = styled.div`
         padding: 0px;
         margin: 0px;
         width: fit-content;
- 
-        }
-
-        &  li:last-of-type {
-            background: red;
         }
 
         & img{
